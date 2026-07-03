@@ -54,7 +54,7 @@ interface BentoCardProps {
 
 const BentoCard = ({ src, title, description }: BentoCardProps) => {
   return (
-    <article className="relative size-full">
+    <article className="relative size-full overflow-hidden rounded-md">
       <video
         src={src}
         loop
@@ -63,11 +63,15 @@ const BentoCard = ({ src, title, description }: BentoCardProps) => {
         className="absolute top-0 left-0 size-full object-cover object-center"
       />
 
-      <div className="relative z-10 flex size-full flex-col justify-between p-5 text-blue-50">
-        <div>
+      <div className="absolute inset-0 bg-gradient-to-r from-black/88 via-black/40 to-transparent" />
+
+      <div className="relative z-10 flex size-full flex-col justify-start p-6 text-blue-50 lg:p-8">
+        <div className="max-w-xs lg:max-w-sm">
           <h1 className="bento-title special-font">{title}</h1>
           {description && (
-            <p className="tetx-xl mt-3 max-w-64 md:text-base">{description}</p>
+            <p className="mt-4 max-w-80 text-lg leading-snug text-blue-50/95">
+              {description}
+            </p>
           )}
         </div>
       </div>
@@ -105,9 +109,9 @@ export const Features = () => {
 
         <div
           id="nexus"
-          className="grid h-[175vh] grid-cols-2 grid-rows-3 gap-7"
+          className="grid grid-cols-1 gap-7 lg:grid-cols-2 lg:grid-rows-[31rem_24rem_18rem]"
         >
-          <BentoTilt className="bento-tilt_1 me-14 row-span-1 md:col-span-1 md:row-span-2">
+          <BentoTilt className="bento-tilt_1 min-h-[34rem] lg:row-span-2 lg:min-h-0">
             <BentoCard
               src={VIDEO_LINKS.feature2}
               title={
@@ -119,19 +123,7 @@ export const Features = () => {
             />
           </BentoTilt>
 
-          {/* <BentoTilt className="bento-tilt_1 row-span-1 ms-32 md:col-span-1 md:ms-0">
-            <BentoCard
-              src={VIDEO_LINKS.feature3}
-              title={
-                <>
-                  n<b>e</b>xus
-                </>
-              }
-              description="A gamified social hub, adding a new dimension of play to social interaction for Web3 communities."
-            />
-          </BentoTilt> */}
-
-          <BentoTilt className="bento-tilt_1 me-14 md:col-span-1 md:me-0">
+          <BentoTilt className="bento-tilt_1 min-h-[20rem] lg:min-h-0">
             <BentoCard
               src={VIDEO_LINKS.feature3}
               title={
@@ -143,7 +135,7 @@ export const Features = () => {
             />
           </BentoTilt>
 
-          <BentoTilt className="bento-tilt_1 me-14 md:col-span-1 md:me-0">
+          <BentoTilt className="bento-tilt_1 min-h-[20rem] lg:min-h-0">
             <BentoCard
               src={VIDEO_LINKS.feature4}
               title={
@@ -155,17 +147,21 @@ export const Features = () => {
             />
           </BentoTilt>
 
-          <BentoTilt className="bento-tilt_2">
-            <div className="flex size-full flex-col justify-between bg-violet-300 p-5">
-              <h1 className="bento-title special-font max-w-64 text-black">
-                M<b>o</b>re co<b>m</b>ing so<b>o</b>n!
+          <BentoTilt className="bento-tilt_2 min-h-[16rem] lg:min-h-0">
+            <div className="flex size-full flex-col justify-between bg-linear-to-r from-[#5a15ff] to-[#7e52ff] p-6 lg:p-8">
+              <h1 className="bento-title special-font max-w-56 text-black">
+                more
+                <br />
+                co<b>m</b>ing
+                <br />
+                so<b>o</b>n!
               </h1>
 
-              <TiLocationArrow className="m-5 scale-[5] self-end" />
+              <TiLocationArrow className="m-3 self-end text-6xl text-black lg:text-7xl" />
             </div>
           </BentoTilt>
 
-          <BentoTilt className="bento-tilt_2">
+          <BentoTilt className="bento-tilt_2 min-h-[16rem] lg:min-h-0">
             <video
               src={VIDEO_LINKS.feature5}
               loop
