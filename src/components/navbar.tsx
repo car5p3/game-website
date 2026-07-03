@@ -24,7 +24,7 @@ export const Navbar = () => {
   }, [isAudioPlaying]);
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 w-full bg-black/95 backdrop-blur-sm">
+    <header className="fixed rounded-b-3xl inset-x-0 top-0 z-50 w-full bg-black/95 backdrop-blur-sm">
       <div className="mx-auto w-full max-w-[100vw] px-4 sm:px-6">
         <nav className="flex h-16 items-center justify-between">
           <div className="flex items-center gap-7">
