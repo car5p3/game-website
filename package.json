@@ -13,9 +13,9 @@
     "preview": "vite preview"
   },
   "author": {
-    "name": "Sanidhya Kumar Verma",
-    "email": "sanidhya.verma12345@gmail.com",
-    "url": "https://github.com/sanidhyy"
+    "name": "car5p3",
+    "email": "abdulrehmanvaqar@icloud.com",
+    "url": "https://github.com/car5p3"
   },
   "description": "Modern UI/UX 3D Animated Gaming Website using React and GSAP",
   "keywords": [
@@ -47,21 +47,21 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/sanidhyy/game-website.git"
+    "url": ""
   },
-  "homepage": "https://github.com/sanidhyy/game-website#readme",
+  "homepage": "",
   "bugs": {
-    "url": "https://github.com/sanidhyy/game-website/issues",
-    "email": "sanidhya.verma12345@gmail.com"
+    "url": "https://github.com/car5p3",
+    "email": "abdulrehmanvaqar@icloud.com"
   },
   "funding": [
     {
       "type": "patreon",
-      "url": "https://www.patreon.com/sanidhy"
+      "url": "https://www.patreon.com/"
     },
     {
       "type": "Buy me a coffee",
-      "url": "https://www.buymeacoffee.com/sanidhy"
+      "url": "https://www.buymeacoffee.com/"
     }
   ],
   "dependencies": {
