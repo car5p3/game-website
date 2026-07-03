@@ -10,7 +10,7 @@ export const NAV_ITEMS = [
 ] as const;
 
 export const LINKS = {
-  sourceCode: "https://github.com/sanidhyy/game-website",
+  sourceCode: "#",
 } as const;
 
 export const SOCIAL_LINKS = [
@@ -19,7 +19,7 @@ export const SOCIAL_LINKS = [
     icon: FaDiscord,
   },
   {
-    href: "https://x.com/_sanidhyy",
+    href: "https://x.com/",
     icon: FaXTwitter,
   },
   {

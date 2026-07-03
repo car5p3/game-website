@@ -91,7 +91,7 @@ export const Features = () => {
           </p>
         </div>
 
-        <BentoTilt className="border-hsla relative mb-7 h-96 w-full overflow-hidden rounded-md md:h-[65vh]">
+        <BentoTilt className="border-hsla relative mb-7 h-66 w-full overflow-hidden rounded-md md:h-[45vh]">
           <BentoCard
             src={VIDEO_LINKS.feature1}
             title={
@@ -105,9 +105,9 @@ export const Features = () => {
 
         <div
           id="nexus"
-          className="grid h-[135vh] grid-cols-2 grid-rows-3 gap-7"
+          className="grid h-[175vh] grid-cols-2 grid-rows-3 gap-7"
         >
-          <BentoTilt className="bento-tilt_1 row-span-1 md:col-span-1 md:row-span-2">
+          <BentoTilt className="bento-tilt_1 me-14 row-span-1 md:col-span-1 md:row-span-2">
             <BentoCard
               src={VIDEO_LINKS.feature2}
               title={
@@ -119,7 +119,19 @@ export const Features = () => {
             />
           </BentoTilt>
 
-          <BentoTilt className="bento-tilt_1 row-span-1 ms-32 md:col-span-1 md:ms-0">
+          {/* <BentoTilt className="bento-tilt_1 row-span-1 ms-32 md:col-span-1 md:ms-0">
+            <BentoCard
+              src={VIDEO_LINKS.feature3}
+              title={
+                <>
+                  n<b>e</b>xus
+                </>
+              }
+              description="A gamified social hub, adding a new dimension of play to social interaction for Web3 communities."
+            />
+          </BentoTilt> */}
+
+          <BentoTilt className="bento-tilt_1 me-14 md:col-span-1 md:me-0">
             <BentoCard
               src={VIDEO_LINKS.feature3}
               title={
