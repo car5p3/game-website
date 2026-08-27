@@ -1,3 +1,5 @@
+"use client";
+
 import { VIDEO_LINKS } from "@/constants";
 import { PropsWithChildren, useRef, useState } from "react";
 import { TiLocationArrow } from "react-icons/ti";

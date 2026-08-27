@@ -1,3 +1,5 @@
+"use client";
+
 import { useEffect, useRef, useState } from "react";
 import { FaGithub } from "react-icons/fa";
 import { TiLocationArrow } from "react-icons/ti";

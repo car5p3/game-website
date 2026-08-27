@@ -1,3 +1,5 @@
+"use client";
+
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
@@ -24,6 +26,7 @@ export const Hero = () => {
   const frameRef = useRef<HTMLDivElement>(null);
   const previewVideoRef = useRef<HTMLVideoElement>(null);
   const transitionVideoRef = useRef<HTMLVideoElement>(null);
+  const mainVideoRef = useRef<HTMLVideoElement>(null);
   const loadedVideoSourcesRef = useRef(new Set<string>());
 
   const totalVideos = VIDEO_KEYS.length;
@@ -46,7 +49,35 @@ export const Hero = () => {
 
     loadedVideoSourcesRef.current.add(src);
     setLoadedVideos(loadedVideoSourcesRef.current.size);
+    setIsLoading(false);
   };
+
+  const handleVideoError = (src: string) => {
+    handleVideoLoad(src);
+    setIsLoading(false);
+  };
+
+  useEffect(() => {
+    const loadingTimeout = window.setTimeout(() => {
+      setIsLoading(false);
+    }, 8000);
+
+    const hideLoaderIfVideoIsAlreadyReady = () => {
+      if (mainVideoRef.current && mainVideoRef.current.readyState >= 2) {
+        setIsLoading(false);
+      }
+    };
+
+    hideLoaderIfVideoIsAlreadyReady();
+    const readyStateCheck = window.requestAnimationFrame(
+      hideLoaderIfVideoIsAlreadyReady
+    );
+
+    return () => {
+      window.clearTimeout(loadingTimeout);
+      window.cancelAnimationFrame(readyStateCheck);
+    };
+  }, [currentIndex]);
 
   useEffect(() => {
     if (loadedVideos >= totalVideos) {
@@ -152,6 +183,7 @@ export const Hero = () => {
                 muted
                 className="size-64 origin-center scale-150 object-cover object-center"
                 onLoadedData={() => handleVideoLoad(getVideoSrc(upcomingVideoIndex))}
+                onError={() => handleVideoError(getVideoSrc(upcomingVideoIndex))}
               />
             </div>
           </div>
@@ -163,9 +195,11 @@ export const Hero = () => {
             muted
             className="absolute-center invisible absolute z-20 size-64 object-cover object-center"
             onLoadedData={() => handleVideoLoad(getVideoSrc(currentIndex))}
+            onError={() => handleVideoError(getVideoSrc(currentIndex))}
           />
 
           <video
+            ref={mainVideoRef}
             key={currentIndex}
             src={getVideoSrc(currentIndex)}
             autoPlay
@@ -173,6 +207,7 @@ export const Hero = () => {
             muted
             className="absolute top-0 left-0 size-full object-cover object-center"
             onLoadedData={() => handleVideoLoad(getVideoSrc(currentIndex))}
+            onError={() => handleVideoError(getVideoSrc(currentIndex))}
           />
 
           {VIDEO_KEYS.map((key, index) => {
@@ -190,6 +225,7 @@ export const Hero = () => {
                 className="hidden"
                 muted
                 onLoadedData={() => handleVideoLoad(src)}
+                onError={() => handleVideoError(src)}
               />
             );
           })}

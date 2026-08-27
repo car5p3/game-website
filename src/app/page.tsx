@@ -6,7 +6,7 @@ import { Hero } from "@/components/hero";
 import { Navbar } from "@/components/navbar";
 import { Story } from "@/components/story";
 
-const App = () => {
+export default function HomePage() {
   return (
     <div className="relative min-h-screen w-screen overflow-x-hidden">
       <Navbar />
@@ -22,5 +22,4 @@ const App = () => {
       <Footer />
     </div>
   );
-};
-export default App;
+}

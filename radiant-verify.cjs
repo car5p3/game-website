@@ -17,9 +17,9 @@ async function waitForServer(url, timeoutMs) {
 }
 
 async function main() {
-  const vite = spawn(
+  const next = spawn(
     "C:\\Windows\\System32\\cmd.exe",
-    ["/c", "npm.cmd run dev -- --host 127.0.0.1 --port 4173"],
+    ["/c", "npm.cmd run dev -- --hostname 127.0.0.1 --port 4173"],
     {
       cwd: process.cwd(),
       shell: false,
@@ -29,11 +29,11 @@ async function main() {
 
   let serverOutput = "";
 
-  vite.stdout.on("data", (chunk) => {
+  next.stdout.on("data", (chunk) => {
     serverOutput += chunk.toString();
   });
 
-  vite.stderr.on("data", (chunk) => {
+  next.stderr.on("data", (chunk) => {
     serverOutput += chunk.toString();
   });
 
@@ -94,8 +94,8 @@ async function main() {
 
     await browser.close();
   } finally {
-    if (vite.pid) {
-      spawnSync("taskkill", ["/pid", String(vite.pid), "/T", "/F"], {
+    if (next.pid) {
+      spawnSync("taskkill", ["/pid", String(next.pid), "/T", "/F"], {
         stdio: "ignore",
       });
     }
