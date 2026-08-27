@@ -34,13 +34,14 @@ export const Navbar = () => {
               <img src="/img/logo.png" alt="Logo" className="w-10" />
             </a>
 
-            <Button
+            {/* <Button
               id="product-button"
               rightIcon={TiLocationArrow}
               containerClass="bg-blue-50 md:flex hidden items-center justify-center gap-1"
             >
               Products
-            </Button>
+            </Button> */}
+            <p className="text-red-500">Ouroboros Lab</p>
           </div>
 
           <div className="flex h-full items-center">

@@ -2,15 +2,15 @@ import { FaDiscord, FaTwitch, FaYoutube } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 
 export const NAV_ITEMS = [
-  { label: "TRAILER", href: "#hero" },
-  { label: "About", href: "#about" },
+  { label: "Projects", href: "#hero" },
+  { label: "Services", href: "#about" },
   { label: "Nexus", href: "#nexus" },
   { label: "Story", href: "#story" },
   { label: "Contact", href: "#contact" },
 ] as const;
 
 export const LINKS = {
-  sourceCode: "#",
+  sourceCode: "https://github.com/car5p3",
 } as const;
 
 export const SOCIAL_LINKS = [
